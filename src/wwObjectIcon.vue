@@ -1,6 +1,6 @@
 <template>
     <div class="ww-icon">
-        <div :class="[wwObject.content.data.icon]" aria-hidden="true" :style="style"></div>
+        <div :class="[wwObject.data.icon]" aria-hidden="true" :style="style"></div>
     </div>
 </template>
  
@@ -30,7 +30,7 @@ export default {
         },
         style() {
             let style = {};
-            let wwObjectStyle = this.wwObject.content.data.style || {};
+            let wwObjectStyle = this.wwObject.style || {};
 
             style.color = wwObjectStyle.color || '#000000';
 
@@ -64,7 +64,7 @@ export default {
         },
 
         getShadow() {
-            let wwObjectStyle = this.wwObject.content.data.style || {};
+            let wwObjectStyle = this.wwObject.style || {};
             const shadow = wwObjectStyle.boxShadow || {};
             if (shadow.x || shadow.y || shadow.b || shadow.s || shadow.c) {
                 return shadow.x + 'px ' + shadow.y + 'px ' + shadow.b + 'px ' + shadow.s + 'px ' + shadow.c;
@@ -94,7 +94,7 @@ export default {
 
             try {
                 const result = await wwLib.wwPopups.open(options)
-                this.wwObject.content.data.icon = result.icon;
+                this.wwObject.data.icon = result.icon;
 
 
                 this.wwObjectCtrl.update(this.wwObject);
@@ -229,45 +229,45 @@ export default {
                   ICON
                 \================================================================================================*/
                 if (typeof (result.icon) != 'undefined') {
-                    this.wwObject.content.data.icon = result.icon;
+                    this.wwObject.data.icon = result.icon;
                 }
 
                 /*=============================================m_ÔÔ_m=============================================\
                   STYLE
                 \================================================================================================*/
-                this.wwObject.content.data.style = this.wwObject.content.data.style || {};
+                this.wwObject.style = this.wwObject.style || {};
                 if (typeof (result.borderColor) != 'undefined') {
-                    this.wwObject.content.data.style.borderColor = result.borderColor;
+                    this.wwObject.style.borderColor = result.borderColor;
                 }
                 if (typeof (result.borderRadius) != 'undefined') {
-                    this.wwObject.content.data.style.borderRadius = result.borderRadius;
+                    this.wwObject.style.borderRadius = result.borderRadius;
                 }
                 if (typeof (result.borderStyle) != 'undefined') {
-                    this.wwObject.content.data.style.borderStyle = result.borderStyle;
+                    this.wwObject.style.borderStyle = result.borderStyle;
                 }
                 if (typeof (result.borderWidth) != 'undefined') {
-                    this.wwObject.content.data.style.borderWidth = result.borderWidth;
+                    this.wwObject.style.borderWidth = result.borderWidth;
                 }
                 if (typeof (result.boxShadow) != 'undefined') {
-                    this.wwObject.content.data.style.boxShadow = result.boxShadow;
+                    this.wwObject.style.boxShadow = result.boxShadow;
                 }
                 if (typeof (result.color) != 'undefined') {
-                    this.wwObject.content.data.style.color = result.color;
+                    this.wwObject.style.color = result.color;
                 }
                 if (typeof (result.backgroundColor) != 'undefined') {
-                    this.wwObject.content.data.style.backgroundColor = result.backgroundColor;
+                    this.wwObject.style.backgroundColor = result.backgroundColor;
                 }
                 if (typeof (result.gradient) != 'undefined') {
-                    this.wwObject.content.data.style.gradient = result.gradient;
+                    this.wwObject.style.gradient = result.gradient;
                 }
                 if (typeof (result.gradientColor) != 'undefined') {
-                    this.wwObject.content.data.style.backgroundColor = result.gradientColor;
+                    this.wwObject.style.backgroundColor = result.gradientColor;
                 }
                 if (typeof (result.fontSize) != 'undefined') {
-                    this.wwObject.content.data.style.fontSize = result.fontSize;
+                    this.wwObject.style.fontSize = result.fontSize;
                 }
                 if (typeof (result.size) != 'undefined') {
-                    this.wwObject.content.data.style.size = result.size;
+                    this.wwObject.style.size = result.size;
                 }
 
 

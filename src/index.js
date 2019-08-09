@@ -7,6 +7,33 @@ const addComponent = function () {
     if (window.vm) {
 
         wwLib.wwObject.register({
+            /* wwManager:start */
+            cmsOptions: {
+                wwObjectMenu: {
+                    items: [
+                        {
+                            name: 'OPTIONS',
+                            main: true,
+                            text: {
+                                en: 'Options',
+                                fr: 'Options'
+                            },
+                            icon: 'wwi wwi-edit-other',
+                            action: 'edit'
+                        },
+                        {
+                            name: 'ICON',
+                            text: {
+                                en: 'Icon',
+                                fr: 'Icône'
+                            },
+                            icon: 'wwi wwi-icon',
+                            action: 'changeIcon'
+                        }
+                    ]
+                }
+            },
+            /* wwManager:end */
             content: {
                 type: name,
                 data: {
@@ -35,34 +62,7 @@ const addComponent = function () {
                 wwAnalytics: {
                     click: true
                 }
-            },
-            /* wwManager:start */
-            cmsOptions: {
-                wwObjectMenu: {
-                    items: [
-                        {
-                            name: 'OPTIONS',
-                            main: true,
-                            text: {
-                                en: 'Options',
-                                fr: 'Options'
-                            },
-                            icon: 'wwi wwi-edit-other',
-                            action: 'edit'
-                        },
-                        {
-                            name: 'ICON',
-                            text: {
-                                en: 'Icon',
-                                fr: 'Icône'
-                            },
-                            icon: 'wwi wwi-icon',
-                            action: 'changeIcon'
-                        }
-                    ]
-                }
             }
-            /* wwManager:end */
         });
 
         window.vm.addComponent({
